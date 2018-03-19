@@ -1,0 +1,9 @@
+{
+  "name": "aggregation-calculus",
+  "version": "0.1.0",
+  "description": "λ-calculus (Ramda like) derived implementation of functional aggregations over Mongo. Write Ramda with the performance of aggregations!",
+  "main": "src/index.js",
+  "repository": "https://github.com/rung-tools/aggregation-calculus.git",
+  "author": "Marcelo Camargo <marcelocamargo@linuxmail.org>",
+  "license": "MIT"
+}
