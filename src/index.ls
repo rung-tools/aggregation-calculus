@@ -23,6 +23,8 @@
  */
 module.exports =
     T: 1
+    add-fields: (fields) ->
+        $add-fields: fields
     always: (expr) ->
         $literal: expr
     both: (left, right) ->
@@ -31,13 +33,43 @@ module.exports =
         $cond: [predicate, action, acc]), null)
     contains: (needle, haystack) ->
         $in: [needle, haystack]
+    count: (name) ->
+        $count: name
     equals: (left, right) ->
         $eq: [left, right]
+    facet: (spec) ->
+        $facet: spec
+    group: (spec) ->
+        $group: spec
     head: (expr) ->
         $array-elem-at: [expr, 0]
     if-else: (condition, when-true, when-false) ->
         $cond: [condition, when-true, when-false]
     last: (expr) ->
         $array-elem-at: [expr, -1]
+    lazy:
+        last: (list) ->
+            $last: list
     length: (list) ->
         $size: list
+    lookup: (foreign, local-field, as) ->
+        [from, foreign-field] = foreign.split \.
+        $lookup:
+            from: from
+            local-field: local-field
+            foreign-field: foreign-field
+            as: as
+    limit: (size) ->
+        $limit: size
+    match: (spec) ->
+        $match: spec
+    project: (spec) ->
+        $project: spec
+    push: (spec) ->
+        $push: spec
+    sort: (spec) ->
+        $sort: spec
+    sum: (list) ->
+        $sum: list
+    to-boolean: (expr) ->
+        $cond: [expr, ($literal: yes), ($literal: no)]
