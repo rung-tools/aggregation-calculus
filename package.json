@@ -7,8 +7,8 @@
   "author": "Marcelo Camargo <marcelocamargo@linuxmail.org>",
   "license": "MIT",
   "scripts": {
-    "build": "lsc -cb -o dist/ ./src/index.ls",
-    "watch": "lsc -cwb -o dist/ ./src/index.ls"
+    "build": "lsc -cb -o ./ ./src/index.ls",
+    "watch": "lsc -cwb -o ./ ./src/index.ls"
   },
   "devDependencies": {
     "livescript": "1.5.0"
