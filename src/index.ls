@@ -25,6 +25,8 @@ module.exports =
     T: 1
     add-fields: (fields) ->
         $add-fields: fields
+    all-pass: (expressions) ->
+        $and: expressions
     always: (expr) ->
         $literal: expr
     both: (left, right) ->
